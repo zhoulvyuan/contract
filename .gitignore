@@ -1,3 +1,9 @@
 # Default ignored files
 .idea/
 artifacts/
+broadcast/
+cache/
+lib/
+.gitmodules
+.github
+foundry.toml

@@ -12,7 +12,9 @@ Foundry consists of:
 ## Documentation
 
 https://book.getfoundry.sh/
-
+foundry说明文档 https://learnblockchain.cn/docs/foundry/i18n/zh/index.html  
+solidity说明文档 https://solidity-cn.readthedocs.io/zh/develop/  
+解码工具 https://www.toolhelper.cn/EncodeDecode/ByteArrayEncodeDecode
 ## Usage
 
 ### Build
@@ -55,7 +57,12 @@ $ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --pri
 
 ```shell
 $ cast <subcommand>
+1.cast call contract_address调用合约的view和pure函数
+发送交易
+2.cast send contract_address "function_name(param_type1,param_type2) param1 param2 --rpc-url url --private-key key"
 ```
+
+
 
 ### Help
 
@@ -70,6 +77,6 @@ $ cast --help
 2.执行fore compile编译项目
 3.执行anvil 启动本地网络/或者使用ganache
 4.在script目录下编写部署脚本
-5.使用cast send调用链上的合约
-cast send 0x26F9cB5311D13285F0A478ac093DC4041Fe5F02F "test()" --rpc-url http://127.0.0.1:7545 --private-key 0xa87d7c03883c40cd02b1912a48fc39a649620901b08bf4191a0ee0b437b3c2fa
+5.使用cast call调用链上的合约
+cast call 0x527420aD3F6B14B7B4a027263fd7FB5D35907Be2 "test()" --rpc-url http://127.0.0.1:7545
 ```

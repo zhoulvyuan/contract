@@ -10,6 +10,7 @@ contract DeployFundContract is Script{
         vm.startBroadcast();
         FundTradeExtend fundTradeExtend = new FundTradeExtend();
         vm.stopBroadcast();
+        return fundTradeExtend;
     }
 
 }

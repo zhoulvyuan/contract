@@ -71,7 +71,12 @@ $ forge --help
 $ anvil --help
 $ cast --help
 ```
+### solidity语法描述
+```solidity
 
+```
+
+### 项目搭建
 ```项目搭建
 1.执行fore init --force，创建健项目
 2.执行fore compile编译项目

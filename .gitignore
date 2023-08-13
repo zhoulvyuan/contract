@@ -4,4 +4,3 @@ artifacts/
 broadcast/
 cache/
 .github
-foundry.toml

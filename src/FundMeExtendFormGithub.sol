@@ -18,4 +18,13 @@ contract FundMeExtendFormGithub is FunWithStorage{
     function GET_MIX_GAS() public view returns(uint256) {
         return MIX_GAS;
     }
+
+    function addMyArray(uint256 number) public {
+        myArray.push(number);
+    }
+
+    function getMyArraySize() view public returns(uint256) {
+        return myArray.length;
+    }
+
 }

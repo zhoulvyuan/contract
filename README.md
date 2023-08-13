@@ -72,8 +72,10 @@ $ anvil --help
 $ cast --help
 ```
 ### solidity语法描述
-```solidity
-
+```实现使用import引入远程插件
+1.使用forge install libPath@version --no-commit从github上下载资源，并打包到当前项目的lib中；libPath为github上资源项目的跟路径，需要取出githu.com域名
+2.在foundry.toml中重新定义远程插件路径，如：remappings = ["@fundme/contracts/=lib/foundry-fund-me-f23/"]
+3.使用import关键字引入远程插件，如：import "@fundme/contracts/src/exampleContracts/FunWithStorage.sol";
 ```
 
 ### 项目搭建

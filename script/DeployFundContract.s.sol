@@ -12,5 +12,4 @@ contract DeployFundContract is Script{
         vm.stopBroadcast();
         return fundTradeExtend;
     }
-
 }

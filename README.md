@@ -95,4 +95,5 @@ cast call 0x527420aD3F6B14B7B4a027263fd7FB5D35907Be2 "test()" --rpc-url http://1
 2.合同需要继承forge-std/Test.sol
 3.实现函数setUp，用于赋初始值，准备测试数据
 4.实现函数testDemo，用于验证单元测试结果
+5.使用forge test -vv 发起测试过程
 ```

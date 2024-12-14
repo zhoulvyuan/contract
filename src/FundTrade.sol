@@ -11,7 +11,7 @@ contract FundTrade {
     mapping(string => uint128) custAsset;
 
 // 上架基金产品
-    function onlineFund(string memory fundName, string memory fundCode, uint64 netVal) public {
+    function onlineFund(string calldata fundName, string calldata fundCode, uint64 netVal) public {
         require(!isContainFund(fundCode), "ji jin yi jing cun zai");
         funds.push(Fund(fundName, fundCode, netVal));
     }
@@ -31,14 +31,14 @@ contract FundTrade {
     }
 
 //下架基金产品
-    function updownFund(string memory fundCode) public {
+    function updownFund(string calldata fundCode) public {
         int256 index = findFundIndex(fundCode);
         require(index >= 0, "ji jin bu cun zai");
         delete funds[uint256(index)];
     }
 
 //寻找基金产品索引
-    function findFundIndex(string memory fundCode) internal view returns(int256) {
+    function findFundIndex(string calldata fundCode) internal view returns(int256) {
         for (uint256 i = 0; i < funds.length; i++) {
             if (stringEqual(funds[i].fundCode, fundCode)) {
                 return int256(i);
@@ -47,12 +47,12 @@ contract FundTrade {
         return -1;
     }
 
-    function regist(string memory name, string memory certCode) public {
+    function regist(string calldata name, string calldata certCode) public {
         require(!isContainCust(certCode), "ke hu yi jing cun zai");
         custs.push(Cust(name, certCode));
     }
 
-    function isContainCust(string memory certCode) internal view returns(bool) {
+    function isContainCust(string calldata certCode) internal view returns(bool) {
         for (uint256 i = 0; i < custs.length; i++) {
             if (stringEqual(custs[i].certCode, certCode)) {
                 return true;
@@ -62,7 +62,7 @@ contract FundTrade {
     }
 
 //购买基金
-    function buyFund(string memory certCode, string memory fundCode, uint64 shrNum) public {
+    function buyFund(string calldata certCode, string calldata fundCode, uint64 shrNum) public {
         require(isContainCust(certCode), "ke hu bu cun zai");
         require(isContainFund(fundCode), "ji jin bu cun zai");
         bool isUpdate = false;
@@ -79,7 +79,7 @@ contract FundTrade {
     }
 
 //赎回基金
-    function redemFund(string memory certCode, string memory fundCode, uint64 shrNum) public {
+    function redemFund(string calldata certCode, string calldata fundCode, uint64 shrNum) public {
         require(isContainCust(certCode), "ke hu bu cun zai");
         require(isContainFund(fundCode), "ji jin bu cun zai");
         bool isUpdate = false;
@@ -127,7 +127,7 @@ contract FundTrade {
     }
 
 //更新客户持仓
-    function updateCustAsset(string memory certCode) internal {
+    function updateCustAsset(string calldata certCode) internal {
         uint64 sumShr = 0;
         bool isUpdate = false;
         for (uint256 i = 0; i < custHolds.length; i++) {
@@ -142,7 +142,7 @@ contract FundTrade {
     }
 
     //查询客户资产
-    function queryCustAsset(string memory certCode) public view returns(uint128) {
+    function queryCustAsset(string calldata certCode) public view returns(uint128) {
         require(isContainCust(certCode), "ke hu bu cun zai");
         return custAsset[certCode];
     }

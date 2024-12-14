@@ -8,7 +8,7 @@ contract FundTradeExtend is FundTrade {
     mapping(string => uint128) custHoldAmt;
 
     //计算客户资产
-    function calCustAsset(string memory certCode) public returns(uint128) {
+    function calCustAsset(string calldata certCode) public returns(uint128) {
         require(isContainCust(certCode), "ke hu bu cun zai");
         uint128 sumAmt = 0;
         for (uint256 i = 0; i < custHolds.length; i++) {

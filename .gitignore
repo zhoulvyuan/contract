@@ -3,4 +3,5 @@
 artifacts/
 broadcast/
 cache/
+node_modules/
 .github

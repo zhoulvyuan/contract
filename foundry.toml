@@ -1,7 +1,0 @@
-[profile.default]
-src = "src"
-out = "artifacts"
-libs = ["lib"]
-remappings = ["@fundme/contracts/=lib/foundry-fund-me-f23/"]
-
-# See more config options https://github.com/foundry-rs/foundry/tree/master/config

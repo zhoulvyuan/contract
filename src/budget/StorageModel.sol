@@ -1,11 +1,13 @@
 // SPDX-License-Identifier: ZWJ
 pragma solidity ^0.8.21;
 
-//基金产品
-struct Fund {
-    string fundName;
-    string fundCode;
-    uint64 netVal;
+//租户
+struct Tenant {
+    address tenantId;
+    string code;
+    string name;
+    uint64 staffCounts; //职员数量
+    uint64 fee;
 }
 
 //客户
